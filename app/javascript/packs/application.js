@@ -8,16 +8,34 @@
 // layout file, like app/views/layouts/application.html.erb
 
 //import Vue from 'vue'
-import Vue from 'vue/dist/vue.js';
-import App from '../components/app.vue'
+import Vue from 'vue/dist/vue';
+import store from './vuex';
+import router from './routes.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.body.appendChild(document.createElement('app'))
-  const app = new Vue({
-    el: 'app',
-    template: '<App/>',
-    components: { App }
-  })
+import NavTop from './components/shared/_nav_top';
+Vue.component('nav-top', NavTop);
 
-  console.log(app)
+$.ajaxSetup({
+  beforeSend: function(xhr) {
+    //xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+  },
+  complete: function(xhr, status) {
+    if(xhr.status === 200 || xhr.status === 422) {
+      return true;
+    }
+    if(xhr.status === 404) {
+      return window.location.href = '/404';
+    }
+
+    return window.location.href = '/500';
+  }
 })
+$.ajaxPrefilter(function( options ) {
+  options.url = `/api/v1/${options.url}`;
+});
+
+
+const app = new Vue({
+  router,
+  store
+}).$mount('#app')
