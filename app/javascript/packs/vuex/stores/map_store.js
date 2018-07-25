@@ -34,6 +34,15 @@ const MapStore = {
         }
       })
     },
+    New(context, id) {
+      $.ajax({
+        url: `maps`,
+        type: 'post',
+        success: function(data) {
+          context.commit('one', data)
+        }
+      })
+    },
   }
 };
 

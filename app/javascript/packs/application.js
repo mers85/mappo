@@ -15,6 +15,7 @@ import router from './routes.js';
 import NavTop from './components/shared/_nav_top';
 Vue.component('nav-top', NavTop);
 
+
 $.ajaxSetup({
   beforeSend: function(xhr) {
     //xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
