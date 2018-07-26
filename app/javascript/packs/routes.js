@@ -7,6 +7,7 @@ import MapsIndex from './components/maps/index.vue';
 import MapShow from './components/maps/show.vue';
 import MapNew from './components/maps/new.vue';
 import MapEdit from './components/maps/edit.vue';
+import LocationNew from './components/locations/new.vue';
 
 const router = new VueRouter({
   mode: 'history',
@@ -15,7 +16,8 @@ const router = new VueRouter({
     { path: '/maps', component: MapsIndex, name: 'maps_path' },
     { path: '/maps/new', component: MapNew, name: 'new_map_path' },
     { path: '/maps/:id/edit', component: MapEdit, name: 'edit_map_path' },
-    { path: '/maps/:id', component: MapShow, name: 'map_path' }
+    { path: '/maps/:id', component: MapShow, name: 'map_path' },
+    { path: '/maps/:id/locations/new', component: LocationNew, name: 'new_location_path' }
 
 
   ]

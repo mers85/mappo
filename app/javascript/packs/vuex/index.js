@@ -3,10 +3,12 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import MapStore from './stores/map_store';
+import LocationStore from './stores/location_store';
 
 const store = new Vuex.Store({
   modules: {
-    MapStore
+    MapStore,
+    LocationStore
   }
 });
 
