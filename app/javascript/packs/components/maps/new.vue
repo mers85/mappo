@@ -26,7 +26,7 @@ export default {
   },
 
   mounted: function() {
-    this.$store.dispatch('MapStore/new', this.$route.params.id)
+   // this.$store.dispatch('MapStore/new', this.$route.params.id)
   },
 
   methods: {
@@ -34,7 +34,7 @@ export default {
       this.$store.dispatch('MapStore/create', this.map).then(
         response => {
           setTimeout(() =>
-            this.$router.push({name: 'map_new_path', params: {id: response.map.id}})
+            this.$router.push({name: 'maps_path'})
           , 1000)
         }
       )

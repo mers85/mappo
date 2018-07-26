@@ -19,9 +19,9 @@ class Api::V1::MapsController < ApplicationController
   def update
     @map = Map.find(params[:id])
     if @map.update(map_params)
-      render json: {message: 'Map Updated'}, status: 200
+      render :show, status: 200
     else
-      render json: {errors: @map.errors.full_messages}, status: 400
+      render json: { errors: @map.errors.full_messages}, status: 400
     end
   end
 
