@@ -26,7 +26,7 @@ export default {
   },
 
   mounted: function() {
-   // this.$store.dispatch('MapStore/new', this.$route.params.id)
+    this.$store.dispatch('MapStore/new')
   },
 
   methods: {

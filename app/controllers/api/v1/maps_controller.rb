@@ -7,6 +7,11 @@ class Api::V1::MapsController < ApplicationController
     @map = Map.find(params[:id])
   end
 
+  def new
+    @map = Map.new
+    render :show, status:200
+  end
+
   def create
     @map = Map.new(map_params)
     if @map.save
