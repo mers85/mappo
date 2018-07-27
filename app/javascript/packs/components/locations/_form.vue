@@ -20,6 +20,12 @@
       <label for="">Longitude</label><br/>
       <input type="text-area" v-model="location.long" class="form-control">
     </div>
+    <div class="form-group">
+      <location-picker
+       v-model="location">
+      </location-picker>
+    </div>
+
     <router-link :to="{ name: 'maps_path' }" class="btn btn-default pull-left"> cancel </router-link>
     <submit-tag value="save" klass="btn btn-warning pull-right" :progress="progress"></submit-tag>
   </div>
@@ -27,10 +33,18 @@
 
 <script>
 import SubmitTag from '../shared/_submit_tag.vue';
+import {LocationPicker} from 'vue2-location-picker' // if installComponents is false
+import Vue from 'vue/dist/vue';
+
+
+Vue.use(LocationPicker, {
+    installComponents: false, // If true, create it globally
+});
 
 export default {
   components: {
-    'submit-tag': SubmitTag
+    'submit-tag': SubmitTag,
+    'location-picker': LocationPicker
   },
   data: function() {
     return this.$store.state.LocationStore;

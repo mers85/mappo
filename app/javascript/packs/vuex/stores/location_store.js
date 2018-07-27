@@ -3,7 +3,8 @@ const LocationStore = {
   state: {
     locations: [],
     location: {},
-    progress: ''
+    progress: '',
+    place: null
   },
   mutations: {
     one(state, data) {

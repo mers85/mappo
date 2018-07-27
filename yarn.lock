@@ -5879,6 +5879,10 @@ vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
 
+vue2-location-picker@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vue2-location-picker/-/vue2-location-picker-1.2.0.tgz#ce38affdefd1d7011713f7d792c803dedddae4cb"
+
 vue@^2.5.16:
   version "2.5.16"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.16.tgz#07edb75e8412aaeed871ebafa99f4672584a0085"
