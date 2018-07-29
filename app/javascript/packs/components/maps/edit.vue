@@ -28,7 +28,11 @@ export default {
 
   methods: {
     update: function() {
-      this.$store.dispatch('MapStore/update', this.map)
+      this.$store.dispatch('MapStore/update', this.map).then(
+        ()=> {
+          this.$store.dispatch('MapStore/index');
+        }
+      )
     }
   }
 }
