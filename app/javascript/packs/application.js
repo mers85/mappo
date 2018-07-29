@@ -11,6 +11,14 @@
 import Vue from 'vue/dist/vue';
 import store from './vuex';
 import router from './routes.js';
+import * as VueGoogleMaps from "vue2-google-maps";
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyCFBfx3Zvxcxnhn6xrXJPYMiO3Z6KKdOJc",
+    libraries: "places" // necessary for places input
+  }
+});
 
 import NavTop from './components/shared/_nav_top';
 Vue.component('nav-top', NavTop);

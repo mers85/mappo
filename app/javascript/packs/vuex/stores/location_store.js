@@ -19,6 +19,10 @@ const LocationStore = {
     progress(state, step) {
       state.progress = step;
       return state.progress;
+    },
+    update_position(state, marker) {
+      state.location = {"lat": marker.lat,"long": marker.lng, "address": marker.address};
+      return state.location;
     }
 
   },
@@ -42,6 +46,9 @@ const LocationStore = {
           }
         })
       })
+    },
+    updateLocationPosition(context, marker) {
+      context.commit('update_position', marker)
     },
   }
 };
