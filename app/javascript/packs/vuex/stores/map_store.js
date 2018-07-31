@@ -3,7 +3,9 @@ const MapStore = {
   state: {
     maps: [],
     map: {},
-    progress: ''
+    progress: '',
+    center: { lat: 45.508, lng: -73.587 },
+    currentPlace: null
   },
   mutations: {
     one(state, data) {

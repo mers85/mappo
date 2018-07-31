@@ -56,6 +56,7 @@ export default {
           lng: this.currentPlace.geometry.location.lng(),
           address: this.currentPlace.formatted_address
         };
+        console.log(marker)
         this.$store.dispatch('LocationStore/updateLocationPosition', marker)
         this.markers.push({ position: marker });
         this.places.push(this.currentPlace);

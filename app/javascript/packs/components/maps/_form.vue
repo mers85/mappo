@@ -16,6 +16,7 @@
 <script>
 import SubmitTag from '../shared/_submit_tag.vue';
 
+
 export default {
   components: {
     'submit-tag': SubmitTag
