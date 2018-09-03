@@ -20,8 +20,7 @@ Vue.use(VueGoogleMaps, {
   }
 });
 
-import NavTop from './components/shared/_nav_top';
-Vue.component('nav-top', NavTop);
+
 
 
 $.ajaxSetup({

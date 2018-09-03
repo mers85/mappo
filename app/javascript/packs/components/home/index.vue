@@ -1,7 +1,7 @@
 <template>
   <layout>
     <section class="jumbotron text-center mt-0">
-      <div class="container bg">
+      <div class="container">
         <h1 class="jumbotron-heading">Album example</h1>
         <p class="lead text-white">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
         <p>
@@ -10,15 +10,35 @@
         </p>
       </div>
     </section>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <card-mappo
+            v-for="(map, index) in maps"
+            v-bind:key="index"
+            v-bind:map="map"
+            >
+          </card-mappo>
+        </div>
+      </div>
+    </div>
   </layout>
 </template>
 
 <script>
   import Layout from '../shared/layout';
+  import CardMappo from '../shared/card-mappo';
 
   export default {
     components: {
-      Layout
+      'layout': Layout,
+      'card-mappo': CardMappo
+    },
+    data: function() {
+      return this.$store.state.MapStore;
+    },
+    mounted: function() {
+      this.$store.dispatch('MapStore/index');
     }
   }
 </script>
@@ -31,8 +51,13 @@
       background-position: center top;
        border-radius: 0px;
   }
-  .bg {
-    background: light;
+
+  .jumbotron-heading {
+    font-weight: 300;
+  }
+
+  .jumbotron .container {
+    max-width: 40rem;
     color: white;
   }
 </style>
