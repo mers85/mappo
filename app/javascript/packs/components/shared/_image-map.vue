@@ -30,8 +30,6 @@ import {gmapApi} from 'vue2-google-maps';
       let mapRef = "mapRef-" + this.map_id
       this.$refs[mapRef].$mapPromise.then((map) => {
         const bounds = new google.maps.LatLngBounds();
-        //const locations = this.$store.state.MapStore.map.locations;
-
         this.locations.forEach(function(location) {
           const loc = new google.maps.LatLng(location.lat, location.long);
           bounds.extend(loc);

@@ -1,17 +1,14 @@
 <template>
   <div>
-    <div>
-      <h3>Search and add an address to your location</h3>
-      <label>
-        <gmap-autocomplete
-          @place_changed="setPlace">
-        </gmap-autocomplete>
-        <button @click.prevent="addMarker">Add</button>
-      </label>
-      <br/>
 
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <button @click.prevent="addMarker" class="btn btn-success" type="button">Add</button>
+        </div>
+        <gmap-autocomplete @place_changed="setPlace">
+        </gmap-autocomplete>
     </div>
-    <br>
+
     <gmap-map
       :center="center"
       :zoom="12"
@@ -19,11 +16,13 @@
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
-        :position="m.position"
+        position="m.position"
         @click="center=m.position">
       </gmap-marker>
     </gmap-map>
+
   </div>
+
 </template>
 
 <script>

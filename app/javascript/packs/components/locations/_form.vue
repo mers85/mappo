@@ -1,21 +1,29 @@
 <template>
-  <div>
+  <div class="row">
     <input type="hidden" v-model="location.address" class="form-control">
     <input type="hidden" v-model="location.lat" class="form-control">
     <input type="hidden" v-model="location.long" class="form-control">
-    <div class="form-group">
-      <label for="">Title</label><br/>
-      <input type="text" v-model="location.title" class="form-control">
-    </div>
-    <div class="form-group">
-      <label for="">Description</label><br/>
-      <input type="text-area" v-model="location.description" class="form-control">
-    </div>
-    <div class="form-group">
+    <div class="col-7 form-group">
       <google-map-picker />
     </div>
-    <router-link :to="{ name: 'maps_path' }" class="btn btn-default pull-left"> cancel </router-link>
-    <submit-tag value="save" klass="btn btn-warning pull-right" :progress="progress"></submit-tag>
+    <div class="col-5 px-1 py-5 mt-3">
+
+      <div class="form-group">
+        <label for="locationTitle">Title</label>
+        <input type="title" v-model="location.title" class="form-control" id="locationTitle">
+      </div>
+
+      <div class="form-group">
+        <label for="locationDescription">Description</label>
+        <input type="text-area" v-model="location.description" class="form-control" id="locationDescription">
+      </div>
+
+      <div  class="row float-left">
+          <submit-tag value="save" klass="btn btn-success mx-3" :progress="progress"></submit-tag>
+          <router-link :to="{ name: 'maps_path' }" class="btn btn-danger"> cancel </router-link>
+      </div>
+
+    </div>
   </div>
 </template>
 
