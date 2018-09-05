@@ -1,9 +1,7 @@
 <template>
   <layout>
-    <div class='col-xs-12'>
+    <div class="container mt-5 py-5">
       <h1>Create a new map</h1>
-    </div>
-    <div class='col-xs-12'>
       <form v-on:submit.prevent="create" accept-charset="UTF-8" class="form">
         <form-map></form-map>
       </form>

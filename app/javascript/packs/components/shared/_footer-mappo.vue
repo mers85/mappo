@@ -17,7 +17,7 @@
   footer {
     padding-top: 2rem;
     padding-bottom: 5rem;
-    background-color: lightblue;
+    background-color: light;
   }
 
   footer p {

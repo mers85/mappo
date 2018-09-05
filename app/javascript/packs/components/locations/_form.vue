@@ -20,7 +20,7 @@
 
       <div  class="row float-left">
           <submit-tag value="save" klass="btn btn-success mx-3" :progress="progress"></submit-tag>
-          <router-link :to="{ name: 'maps_path' }" class="btn btn-danger"> cancel </router-link>
+          <router-link :to="{ name: 'maps_path' }" class="btn btn-warning"> cancel </router-link>
       </div>
 
     </div>

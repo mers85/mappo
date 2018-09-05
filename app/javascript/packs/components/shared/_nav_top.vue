@@ -40,7 +40,6 @@
     background: rgba(4,4,4,0.45);
     background-attachment: scroll;
   }
-
   .router-link-active {
     text-decoration: underline;
   }

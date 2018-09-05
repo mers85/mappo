@@ -1,12 +1,12 @@
 <template>
   <layout>
     <section class="jumbotron text-center mt-0">
-      <div class="container">
-        <h1 class="jumbotron-heading">Album example</h1>
-        <p class="lead text-white">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+      <div class="container fondo pt-5 my-5">
+        <h1 class="jumbotron-heading">Mappo</h1>
+        <p class="text-white heading">Web application to share created routes around the world.</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Main call to action</a>
-          <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          <router-link :to="{ name: 'new_map_path' }" class="btn btn-primary my-2" exact>Add new map</router-link>
+          <router-link :to="{ name: 'maps_path' }" class="btn btn-secondary my-2" exact>View all maps</router-link>
         </p>
       </div>
     </section>
@@ -48,12 +48,18 @@
       background-image:url('../../assets/map_001.jpg');
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center top;
+      background-position: center center;
        border-radius: 0px;
+      position: relative;
+
   }
 
   .jumbotron-heading {
-    font-weight: 300;
+    font-weight: 400;
+  }
+  .fondo {
+    background: rgba(4,4,4,0.45);
+    background-attachment: scroll;
   }
 
   .jumbotron .container {

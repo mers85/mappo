@@ -1,6 +1,7 @@
 <template>
   <layout>
-    <div class='col-xs-12'>
+    <div class="container mt-5 py-5">
+      <h1>Edit map</h1>
       <form v-on:submit.prevent="update" accept-charset="UTF-8" class="form">
         <form-map></form-map>
       </form>
