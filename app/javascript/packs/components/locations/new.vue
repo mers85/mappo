@@ -1,12 +1,10 @@
 <template>
   <layout>
-    <div class='col-xs-12'>
+    <div class="container mt-5 py-3">
       <h1>Create Locations</h1>
-    </div>
-    <div class='col-xs-12'>
-      <form v-on:submit.prevent="create" accept-charset="UTF-8" class="form">
-        <form-location></form-location>
-      </form>
+        <form v-on:submit.prevent="create" accept-charset="UTF-8" class="form">
+          <form-location></form-location>
+        </form>
     </div>
   </layout>
 </template>

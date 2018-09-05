@@ -1,54 +1,53 @@
 <template>
   <layout>
-    <div class='col-xs-12'>
-      <h2>{{ map.name }}</h2>
-      <ul>
-        <li> Map identification: {{ map.id }}</li>
-        <li> Map description: {{ map.description}}</li>
-      </ul>
+    <div class="container mt-5 mb-4 py-3">
+      <div class='row mt-3'>
+        <div class="col-8">
+          <h2>{{ map.name }}</h2>
+        </div>
+        <div class="col-4 ">
+          <router-link :to="{ name: 'new_location_path' }" class="float-right btn btn-outline-secondary btn-sm " >Add locations</router-link>
+          <router-link :to="{ name: 'edit_map_path' }" class="float-right btn btn-outline-secondary btn-sm mr-2" >Edit</router-link>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 mt-3 show">
+          <image-map v-bind:map_id="map.id" v-bind:locations="map.locations" ></image-map>
+          <p class="mt-3 text-muted">{{ map.description}}</p>
+        </div>
+      </div>
     </div>
-      <gmap-map ref="mapRef"
-        :center="center"
-        :zoom="12"
-        style="width:100%;  height: 400px;">
-        <gmap-marker
-          :key="index"
-          v-for="(l, index) in map.locations"
-          :position="{lat: l.lat, lng: l.long}"
-          @click="center=m.position">
-        </gmap-marker>
-      </gmap-map>
   </layout>
 </template>
 
 <script>
 import Layout from '../shared/layout';
-import {gmapApi} from 'vue2-google-maps';
+import Imagemap from '../shared/_image-map';
 
 export default {
+  name: 'MapShow',
   components: {
-    Layout
-  },
-  computed:{
-    google: gmapApi
+    'layout': Layout,
+    'image-map': Imagemap
   },
   data: function() {
     return this.$store.state.MapStore
   },
   mounted: function() {
     this.$store.dispatch('MapStore/show', this.$route.params.id);
-  },
-  updated: function(){
-    this.$refs.mapRef.$mapPromise.then((map) => {
-      const bounds = new google.maps.LatLngBounds();
-      const locations = this.$store.state.MapStore.map.locations;
-      locations.forEach(function(location) {
-        const loc = new google.maps.LatLng(location.lat, location.long);
-        bounds.extend(loc);
-      });
-      map.fitBounds(bounds);
-      map.panToBounds(bounds);
-    });
   }
+
 }
 </script>
+
+<style scoped>
+
+  h2 {
+    font-family: monospace;
+  }
+  p {
+    font-family: monospace;
+    font-size: 20px;
+  }
+
+</style>
