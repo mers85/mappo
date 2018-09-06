@@ -15,12 +15,10 @@ import * as VueGoogleMaps from "vue2-google-maps";
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: "AIzaSyCFBfx3Zvxcxnhn6xrXJPYMiO3Z6KKdOJc",
+    key: process.env.GOOGLE_MAPS_API_KEY,
     libraries: "places" // necessary for places input
   }
 });
-
-
 
 
 $.ajaxSetup({
