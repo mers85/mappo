@@ -13,6 +13,7 @@ import store from './vuex';
 import router from './routes.js';
 import * as VueGoogleMaps from "vue2-google-maps";
 
+console.log(process.env.GOOGLE_MAPS_API_KEY);
 Vue.use(VueGoogleMaps, {
   load: {
     key: process.env.GOOGLE_MAPS_API_KEY,
